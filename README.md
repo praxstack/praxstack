@@ -332,9 +332,9 @@ If you're working on something interesting — let's talk.
 <br/>
 <a href="https://github.com/praxstack">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/praxstack/praxstack/output/github-snake-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/praxstack/praxstack/output/github-snake.svg" />
-    <img alt="GitHub contribution snake animation" src="https://raw.githubusercontent.com/praxstack/praxstack/output/github-snake-dark.svg" width="100%" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/praxstack/praxstack/main/assets/github-snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/praxstack/praxstack/main/assets/github-snake.svg" />
+    <img alt="GitHub contribution snake animation" src="https://raw.githubusercontent.com/praxstack/praxstack/main/assets/github-snake-dark.svg" width="100%" />
   </picture>
 </a>
 
