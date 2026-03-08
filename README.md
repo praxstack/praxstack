@@ -355,3 +355,4 @@ If you're working on something interesting — let's talk.
 
 <!-- Footer Wave -->
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:06b6d4,50:8b5cf6,100:06b6d4&height=120&section=footer" width="100%" alt="Footer" />
+
