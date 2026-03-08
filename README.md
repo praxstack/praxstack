@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- ╔══════════════════════════════════════════════════════════════╗ -->
-<!-- ║  HEADER — Terminal-inspired banner with animated gradient   ║ -->
+<!-- ║  HEADER — Terminal-inspired banner with animated gradient    ║ -->
 <!-- ╚══════════════════════════════════════════════════════════════╝ -->
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:06b6d4,50:8b5cf6,100:06b6d4&height=220&section=header&text=Prakhar%20Shekhar%20Parthasarthi&fontSize=36&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Ex-SDE%20@%20Amazon%20%7C%20Full-Stack%20Engineer%20%7C%20Open%20Source&descSize=16&descAlignY=55&descAlign=50" width="100%" alt="Header Banner" />
