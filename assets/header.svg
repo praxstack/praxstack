@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300">
+  <defs>
+    <!-- Animated mesh gradient -->
+    <radialGradient id="g1" cx="20%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#00e5a0" stop-opacity="0.15">
+        <animate attributeName="stop-opacity" values="0.15;0.25;0.15" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#0d1117" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g2" cx="75%" cy="60%" r="50%">
+      <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.12">
+        <animate attributeName="stop-opacity" values="0.12;0.22;0.12" dur="10s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#0d1117" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g3" cx="50%" cy="80%" r="40%">
+      <stop offset="0%" stop-color="#00e5a0" stop-opacity="0.08">
+        <animate attributeName="stop-opacity" values="0.08;0.15;0.08" dur="12s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#0d1117" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Glow filter -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <!-- Grid pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.5" opacity="0.4"/>
+    </pattern>
+    <!-- Dot accent pattern -->
+    <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="0.5" fill="#00e5a0" opacity="0.3"/>
+    </pattern>
+  </defs>
+  
+  <style>
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes cursorBlink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes accentPulse {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
+    }
+    .name {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-weight: 800;
+      font-size: 48px;
+      fill: #e6edf3;
+      letter-spacing: 3px;
+      animation: fadeInUp 1s ease-out forwards;
+    }
+    .role {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      fill: #7d8590;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      animation: fadeInUp 1s ease-out 0.3s forwards;
+      opacity: 0;
+    }
+    .accent-line {
+      animation: slideIn 0.8s ease-out 0.6s forwards;
+      opacity: 0;
+    }
+    .cursor {
+      animation: cursorBlink 1s step-end infinite;
+    }
+    .tag {
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+      fill: #00e5a0;
+      opacity: 0;
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+    .tag-muted {
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+      fill: #374151;
+    }
+    .corner-accent {
+      animation: accentPulse 4s ease-in-out infinite;
+    }
+  </style>
+
+  <!-- Base background -->
+  <rect width="1200" height="300" fill="#0d1117"/>
+  
+  <!-- Mesh gradient layers -->
+  <rect width="1200" height="300" fill="url(#g1)"/>
+  <rect width="1200" height="300" fill="url(#g2)"/>
+  <rect width="1200" height="300" fill="url(#g3)"/>
+  
+  <!-- Grid overlay -->
+  <rect width="1200" height="300" fill="url(#grid)" opacity="0.3"/>
+  
+  <!-- Geometric accents — top left -->
+  <g class="corner-accent" opacity="0.6">
+    <line x1="30" y1="30" x2="80" y2="30" stroke="#00e5a0" stroke-width="1"/>
+    <line x1="30" y1="30" x2="30" y2="80" stroke="#00e5a0" stroke-width="1"/>
+  </g>
+  
+  <!-- Geometric accents — top right -->
+  <g class="corner-accent" opacity="0.6" style="animation-delay: 2s">
+    <line x1="1120" y1="30" x2="1170" y2="30" stroke="#a78bfa" stroke-width="1"/>
+    <line x1="1170" y1="30" x2="1170" y2="80" stroke="#a78bfa" stroke-width="1"/>
+  </g>
+  
+  <!-- Geometric accents — bottom left -->
+  <g class="corner-accent" opacity="0.4" style="animation-delay: 1s">
+    <line x1="30" y1="270" x2="30" y2="220" stroke="#00e5a0" stroke-width="0.5"/>
+    <line x1="30" y1="270" x2="80" y2="270" stroke="#00e5a0" stroke-width="0.5"/>
+  </g>
+
+  <!-- Geometric accents — bottom right -->
+  <g class="corner-accent" opacity="0.4" style="animation-delay: 3s">
+    <line x1="1170" y1="270" x2="1170" y2="220" stroke="#a78bfa" stroke-width="0.5"/>
+    <line x1="1170" y1="270" x2="1120" y2="270" stroke="#a78bfa" stroke-width="0.5"/>
+  </g>
+
+  <!-- Floating geometric shapes -->
+  <rect x="150" y="45" width="8" height="8" fill="none" stroke="#00e5a0" stroke-width="0.8" opacity="0.4" transform="rotate(45 154 49)">
+    <animateTransform attributeName="transform" type="rotate" from="45 154 49" to="405 154 49" dur="20s" repeatCount="indefinite"/>
+  </rect>
+  <circle cx="1050" cy="250" r="4" fill="none" stroke="#a78bfa" stroke-width="0.8" opacity="0.3">
+    <animate attributeName="r" values="4;6;4" dur="6s" repeatCount="indefinite"/>
+  </circle>
+  <polygon points="1080,55 1085,65 1075,65" fill="none" stroke="#00e5a0" stroke-width="0.6" opacity="0.3">
+    <animateTransform attributeName="transform" type="rotate" from="0 1080 60" to="360 1080 60" dur="15s" repeatCount="indefinite"/>
+  </polygon>
+
+  <!-- Horizontal accent line -->
+  <g class="accent-line">
+    <line x1="440" y1="165" x2="540" y2="165" stroke="url(#accentGrad)" stroke-width="2"/>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00e5a0"/>
+      <stop offset="100%" stop-color="#a78bfa"/>
+    </linearGradient>
+    <line x1="440" y1="165" x2="540" y2="165" stroke="url(#accentGrad)" stroke-width="2" filter="url(#softGlow)"/>
+    <circle cx="440" cy="165" r="2" fill="#00e5a0"/>
+    <circle cx="540" cy="165" r="2" fill="#a78bfa"/>
+  </g>
+
+  <!-- Main name text -->
+  <text x="600" y="130" text-anchor="middle" class="name" filter="url(#glow)">
+    PRAKHAR SHEKHAR
+  </text>
+  
+  <!-- Cursor after name -->
+  <rect x="818" y="108" width="3" height="30" fill="#00e5a0" class="cursor"/>
+
+  <!-- Role subtitle -->
+  <text x="600" y="200" text-anchor="middle" class="role">
+    Software Engineer  ·  System Architect  ·  Open Source
+  </text>
+
+  <!-- Terminal tag — left -->
+  <text x="60" y="285" class="tag" style="animation-delay: 0.8s">
+    ~/prakhar <text class="tag-muted">$</text> <text fill="#e6edf3" font-size="12" font-family="Courier New, monospace">ready</text>
+  </text>
+
+  <!-- Version tag — right -->
+  <text x="1090" y="285" text-anchor="end" class="tag" style="animation-delay: 1s">
+    v2026.3
+  </text>
+  
+  <!-- Subtle bottom gradient fade -->
+  <rect y="270" width="1200" height="30" fill="url(#bottomFade)"/>
+  <linearGradient id="bottomFade" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#0d1117" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#0d1117" stop-opacity="0.8"/>
+  </linearGradient>
+</svg>
