@@ -10,17 +10,19 @@
 
 <br/>
 
+<!-- Open to Opportunities — high-contrast badge with icon -->
 <a href="https://www.linkedin.com/in/prakharshekhar/">
-  <img src="https://img.shields.io/badge/%E2%97%8F_Open_to_Opportunities-00e5a0?style=flat-square&labelColor=0d1117" alt="Open to Opportunities" />
+  <img src="https://img.shields.io/badge/%F0%9F%9F%A2%20%20Open%20to%20Opportunities-00e5a0?style=for-the-badge&labelColor=0d1117" height="30" alt="Open to Opportunities" />
 </a>
 
 <br/><br/>
 
-<a href="https://www.linkedin.com/in/prakharshekhar/"><img src="https://img.shields.io/badge/LinkedIn-0d1117?style=flat-square&logo=linkedin&logoColor=6e7681" alt="LinkedIn" /></a>&ensp;
-<a href="https://x.com/ByteByByteSrSDE"><img src="https://img.shields.io/badge/𝕏-0d1117?style=flat-square&logo=x&logoColor=6e7681" alt="X" /></a>&ensp;
-<a href="mailto:prakhar.mnnit.2022@gmail.com"><img src="https://img.shields.io/badge/Email-0d1117?style=flat-square&logo=gmail&logoColor=6e7681" alt="Email" /></a>&ensp;
-<a href="https://www.npmjs.com/package/ai-visual-code-review"><img src="https://img.shields.io/badge/npm-0d1117?style=flat-square&logo=npm&logoColor=6e7681" alt="npm" /></a>&ensp;
-<a href="https://github.com/sponsors/praxstack"><img src="https://img.shields.io/badge/Sponsor-0d1117?style=flat-square&logo=githubsponsors&logoColor=6e7681" alt="Sponsor" /></a>
+<!-- Social links — consistent style with visible icons -->
+<a href="https://www.linkedin.com/in/prakharshekhar/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>&ensp;
+<a href="https://x.com/ByteByByteSrSDE"><img src="https://img.shields.io/badge/𝕏%20Twitter-000000?style=flat-square&logo=x&logoColor=white" alt="X" /></a>&ensp;
+<a href="mailto:prakhar.mnnit.2022@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Email" /></a>&ensp;
+<a href="https://www.npmjs.com/package/ai-visual-code-review"><img src="https://img.shields.io/badge/npm-CB3837?style=flat-square&logo=npm&logoColor=white" alt="npm" /></a>&ensp;
+<a href="https://github.com/sponsors/praxstack"><img src="https://img.shields.io/badge/Sponsor-EA4AAA?style=flat-square&logo=githubsponsors&logoColor=white" alt="Sponsor" /></a>
 
 </div>
 
@@ -73,10 +75,12 @@
 <br/>
 
 <!-- ═══════════════════════════════════════════════════════════════ -->
-<!--  PROJECTS                                                      -->
+<!--  FEATURED PROJECTS                                             -->
 <!-- ═══════════════════════════════════════════════════════════════ -->
 
-### &ensp;`> ls projects/ --featured`
+<div align="center">
+  <h2>Featured Projects</h2>
+</div>
 
 <br/>
 
@@ -84,38 +88,46 @@
 <table>
   <tr>
     <td width="50%" valign="top">
-      <h3 align="center">AI Visual Code Review</h3>
+      <br/>
       <div align="center">
         <a href="https://github.com/praxstack/ai-visual-code-review">
-          <img src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=praxstack&repo=ai-visual-code-review&theme=transparent&hide_border=true&title_color=00e5a0&icon_color=58a6ff&text_color=6e7681&bg_color=0d1117" alt="AI Visual Code Review" />
+          <img src="https://img.shields.io/badge/AI%20Visual%20Code%20Review-e6edf3?style=for-the-badge&labelColor=0d1117&logo=github&logoColor=e6edf3" alt="AI Visual Code Review" />
         </a>
         <br/><br/>
-        <p><em>Security-hardened visual code review with GitHub-like diff viewer, AI-optimized markdown exports, and command injection protection.</em></p>
+        <p>
+          Security-hardened visual code review with GitHub-like diff viewer,<br/>
+          AI-optimized markdown exports, and command injection protection.
+        </p>
         <br/>
-        <a href="https://www.npmjs.com/package/ai-visual-code-review"><img src="https://img.shields.io/npm/v/ai-visual-code-review?style=flat-square&color=00e5a0&labelColor=0d1117" alt="npm" /></a>&ensp;
-        <a href="https://www.npmjs.com/package/ai-visual-code-review"><img src="https://img.shields.io/npm/dm/ai-visual-code-review?style=flat-square&color=58a6ff&labelColor=0d1117" alt="downloads" /></a>
+        <a href="https://www.npmjs.com/package/ai-visual-code-review"><img src="https://img.shields.io/npm/v/ai-visual-code-review?style=flat-square&color=00e5a0&labelColor=161b22&label=version" alt="npm version" /></a>&ensp;
+        <a href="https://www.npmjs.com/package/ai-visual-code-review"><img src="https://img.shields.io/npm/dm/ai-visual-code-review?style=flat-square&color=58a6ff&labelColor=161b22&label=downloads" alt="downloads" /></a>
         <br/><br/>
-        <img src="https://img.shields.io/badge/Node.js-0d1117?style=flat-square&logo=nodedotjs&logoColor=00e5a0" />
-        <img src="https://img.shields.io/badge/Express-0d1117?style=flat-square&logo=express&logoColor=00e5a0" />
-        <img src="https://img.shields.io/badge/Docker-0d1117?style=flat-square&logo=docker&logoColor=00e5a0" />
-        <img src="https://img.shields.io/badge/Jest-0d1117?style=flat-square&logo=jest&logoColor=00e5a0" />
+        <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white" />&nbsp;
+        <img src="https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white" />&nbsp;
+        <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" />&nbsp;
+        <img src="https://img.shields.io/badge/Jest-C21325?style=flat-square&logo=jest&logoColor=white" />
+        <br/><br/>
       </div>
     </td>
     <td width="50%" valign="top">
-      <h3 align="center">Markdown Viewer Pro</h3>
+      <br/>
       <div align="center">
         <a href="https://github.com/praxstack/markdown-viewer-app">
-          <img src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=praxstack&repo=markdown-viewer-app&theme=transparent&hide_border=true&title_color=58a6ff&icon_color=00e5a0&text_color=6e7681&bg_color=0d1117" alt="Markdown Viewer App" />
+          <img src="https://img.shields.io/badge/Markdown%20Viewer%20Pro-e6edf3?style=for-the-badge&labelColor=0d1117&logo=markdown&logoColor=e6edf3" alt="Markdown Viewer Pro" />
         </a>
         <br/><br/>
-        <p><em>Production-ready markdown editor with real-time preview, 12+ themes, Mermaid diagrams, and PDF/HTML export.</em></p>
+        <p>
+          Production-ready markdown editor with real-time preview,<br/>
+          12+ themes, Mermaid diagrams, and PDF/HTML export.
+        </p>
         <br/>
-        <a href="https://praxstack.github.io/markdown-viewer-app/"><img src="https://img.shields.io/badge/Live_Demo-00e5a0?style=flat-square&labelColor=0d1117" alt="Demo" /></a>&ensp;
-        <a href="https://github.com/praxstack/markdown-viewer-app"><img src="https://img.shields.io/badge/155+_Tests-58a6ff?style=flat-square&labelColor=0d1117" alt="Tests" /></a>
+        <a href="https://praxstack.github.io/markdown-viewer-app/"><img src="https://img.shields.io/badge/Live%20Demo-00e5a0?style=flat-square&labelColor=161b22" alt="Live Demo" /></a>&ensp;
+        <a href="https://github.com/praxstack/markdown-viewer-app"><img src="https://img.shields.io/badge/155%2B%20Tests-58a6ff?style=flat-square&labelColor=161b22" alt="155+ Tests" /></a>
         <br/><br/>
-        <img src="https://img.shields.io/badge/Vite-0d1117?style=flat-square&logo=vite&logoColor=58a6ff" />
-        <img src="https://img.shields.io/badge/Vanilla_JS-0d1117?style=flat-square&logo=javascript&logoColor=58a6ff" />
-        <img src="https://img.shields.io/badge/Vitest-0d1117?style=flat-square&logo=vitest&logoColor=58a6ff" />
+        <img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white" />&nbsp;
+        <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=000" />&nbsp;
+        <img src="https://img.shields.io/badge/Vitest-6E9F18?style=flat-square&logo=vitest&logoColor=white" />
+        <br/><br/>
       </div>
     </td>
   </tr>
@@ -143,10 +155,12 @@
 <br/>
 
 <!-- ═══════════════════════════════════════════════════════════════ -->
-<!--  STATS                                                         -->
+<!--  GITHUB STATS                                                  -->
 <!-- ═══════════════════════════════════════════════════════════════ -->
 
-### &ensp;`> git stats`
+<div align="center">
+  <h2>GitHub Stats</h2>
+</div>
 
 <br/>
 
@@ -180,37 +194,37 @@
 <br/>
 
 <!-- ═══════════════════════════════════════════════════════════════ -->
-<!--  CONNECT                                                       -->
+<!--  LET'S CONNECT                                                 -->
 <!-- ═══════════════════════════════════════════════════════════════ -->
 
-### &ensp;`> echo "let's connect"`
+<div align="center">
+  <h2>Let's Connect</h2>
 
 <br/>
 
-<div align="center">
+I'm actively looking for **SDE II / Senior SDE roles** where I can build<br/>
+high-impact, scalable systems. If you're working on something interesting —
 
-I'm actively looking for **SDE II / Senior SDE roles** where I can build high-impact, scalable systems.
-
-If you're working on something interesting — **let's talk.**
+### **Let's talk.**
 
 <br/>
 
 <a href="mailto:prakhar.mnnit.2022@gmail.com">
-  <img src="https://img.shields.io/badge/Email_Me-00e5a0?style=for-the-badge&logoColor=0d1117&labelColor=0d1117" alt="Email" />
+  <img src="https://img.shields.io/badge/Email%20Me-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email Me" />
 </a>&ensp;
 <a href="https://www.linkedin.com/in/prakharshekhar/">
-  <img src="https://img.shields.io/badge/LinkedIn-58a6ff?style=for-the-badge&logoColor=0d1117&labelColor=0d1117" alt="LinkedIn" />
+  <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
 </a>&ensp;
 <a href="https://drive.google.com/file/d/1oY5LGRw5pVExjsdraFAADJTGDaPcM-nh/view?usp=sharing">
-  <img src="https://img.shields.io/badge/Resume-6e7681?style=for-the-badge&logoColor=0d1117&labelColor=0d1117" alt="Resume" />
+  <img src="https://img.shields.io/badge/Resume-e6edf3?style=for-the-badge&logo=readthedocs&logoColor=0d1117&labelColor=e6edf3" alt="Resume" />
 </a>&ensp;
 <a href="https://github.com/sponsors/praxstack">
-  <img src="https://img.shields.io/badge/Sponsor-00e5a0?style=for-the-badge&logoColor=0d1117&labelColor=0d1117" alt="Sponsor" />
+  <img src="https://img.shields.io/badge/Sponsor-EA4AAA?style=for-the-badge&logo=githubsponsors&logoColor=white" alt="Sponsor" />
 </a>
 
 <br/><br/>
 
-<img src="https://komarev.com/ghpvc/?username=praxstack&style=flat-square&color=161b22&label=views" alt="Profile Views" />
+<img src="https://komarev.com/ghpvc/?username=praxstack&style=flat-square&color=161b22&label=Profile%20Views" alt="Profile Views" />
 
 <br/><br/>
 
