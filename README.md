@@ -215,7 +215,4 @@ high-impact, scalable systems. If you're working on something interesting —
 
 <br/>
 
-<img src="https://raw.githubusercontent.com/praxstack/praxstack/main/assets/footer.svg" width="100%" alt="" />
-<img src="https://raw.githubusercontent.com/praxstack/praxstack/main/assets/footer.svg" width="100%" alt="" />
-
-
+<img src="https://raw.githubusercontent.com/praxstack/praxstack/main/assets/footer_v2.svg" width="100%" alt="" />
