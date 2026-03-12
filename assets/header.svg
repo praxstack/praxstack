@@ -1,59 +1,207 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300">
   <defs>
     <radialGradient id="g1" cx="25%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#00e5a0" stop-opacity="0.07"/>
-      <stop offset="100%" stop-color="#0d1117" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#00e5a0" stop-opacity="0.07" />
+      <stop offset="100%" stop-color="#0d1117" stop-opacity="0" />
     </radialGradient>
     <radialGradient id="g2" cx="75%" cy="50%" r="45%">
-      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.05"/>
-      <stop offset="100%" stop-color="#0d1117" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.05" />
+      <stop offset="100%" stop-color="#0d1117" stop-opacity="0" />
     </radialGradient>
     <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse">
-      <rect width="4" height="1" fill="#e6edf3" opacity="0.012"/>
+      <rect width="4" height="1" fill="#e6edf3" opacity="0.012" />
     </pattern>
     <filter id="textGlow">
-      <feGaussianBlur stdDeviation="6" result="blur"/>
-      <feFlood flood-color="#00e5a0" flood-opacity="0.15"/>
-      <feComposite in2="blur" operator="in"/>
-      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feFlood flood-color="#00e5a0" flood-opacity="0.2" />
+      <feComposite in2="blur" operator="in" />
+      <feMerge>
+        <feMergeNode />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feFlood flood-color="#58a6ff" flood-opacity="0.15" />
+      <feComposite in2="blur" operator="in" />
+      <feMerge>
+        <feMergeNode />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
     </filter>
     <linearGradient id="accentLine" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00e5a0" stop-opacity="0"/>
-      <stop offset="40%" stop-color="#00e5a0" stop-opacity="0.6"/>
-      <stop offset="60%" stop-color="#58a6ff" stop-opacity="0.6"/>
-      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#00e5a0" stop-opacity="0" />
+      <stop offset="40%" stop-color="#00e5a0" stop-opacity="0.6" />
+      <stop offset="60%" stop-color="#58a6ff" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="shimmer" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00e5a0" stop-opacity="0">
+        <animate attributeName="stop-opacity" values="0;0.4;0" dur="4s" repeatCount="indefinite"
+          begin="2s" />
+      </stop>
+      <stop offset="50%" stop-color="#58a6ff" stop-opacity="0">
+        <animate attributeName="stop-opacity" values="0;0.3;0" dur="4s" repeatCount="indefinite"
+          begin="2.5s" />
+      </stop>
+      <stop offset="100%" stop-color="#00e5a0" stop-opacity="0">
+        <animate attributeName="stop-opacity" values="0;0.4;0" dur="4s" repeatCount="indefinite"
+          begin="3s" />
+      </stop>
     </linearGradient>
     <linearGradient id="bottomFade" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#0d1117" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#0d1117" stop-opacity="0.9"/>
+      <stop offset="0%" stop-color="#0d1117" stop-opacity="0" />
+      <stop offset="100%" stop-color="#0d1117" stop-opacity="0.9" />
     </linearGradient>
+    <!-- Particle glow -->
+    <filter id="particleGlow">
+      <feGaussianBlur stdDeviation="2" />
+    </filter>
   </defs>
   <style>
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform:
+    translateY(0); } }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1;
+    transform: translateY(0); } }
     @keyframes lineReveal { from { stroke-dashoffset: 280; } to { stroke-dashoffset: 0; } }
-    @media (prefers-reduced-motion: reduce) {
-      .a { opacity: 1 !important; animation: none !important; }
+    @keyframes cornerDraw { from { stroke-dashoffset: 56; } to { stroke-dashoffset: 0; } }
+    @keyframes breathe { 0%,100% { opacity: 0.15; } 50% { opacity: 0.35; } }
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+    @keyframes particleDrift {
+    0% { opacity: 0; transform: translate(0, 0); }
+    20% { opacity: 0.6; }
+    80% { opacity: 0.6; }
+    100% { opacity: 0; transform: translate(var(--dx, 20px), var(--dy, -30px)); }
     }
-    .name { font-family: 'SF Mono','Fira Code','Cascadia Code','Consolas',monospace; font-weight: 700; font-size: 52px; fill: #e6edf3; letter-spacing: 6px; opacity: 0; animation: fadeIn 1.2s cubic-bezier(0.16,1,0.3,1) 0.2s forwards; }
-    .role { font-family: 'SF Mono','Fira Code','Cascadia Code','Consolas',monospace; font-weight: 400; font-size: 12px; fill: #6e7681; letter-spacing: 3.5px; text-transform: uppercase; opacity: 0; animation: fadeIn 1s cubic-bezier(0.16,1,0.3,1) 0.6s forwards; }
-    .tag { font-family: 'SF Mono','Fira Code','Consolas',monospace; font-size: 11px; opacity: 0; animation: fadeIn 0.8s ease-out forwards; }
-    .al { stroke-dasharray: 280; stroke-dashoffset: 280; animation: lineReveal 1.4s cubic-bezier(0.16,1,0.3,1) 0.4s forwards; }
+    @keyframes glowPulse { 0%,100% { filter: url(#textGlow); } 50% { filter: url(#textGlow)
+    brightness(1.1); } }
+    @keyframes shimmerLine { from { stroke-dashoffset: 600; } to { stroke-dashoffset: 0; } }
+    @media (prefers-reduced-motion: reduce) {
+    .a { opacity: 1 !important; animation: none !important; transform: none !important; }
+    }
+    .name { font-family: 'SF Mono','Fira Code','Cascadia Code','Consolas',monospace; font-weight:
+    700; font-size: 52px; fill: #e6edf3; letter-spacing: 6px; opacity: 0; animation: fadeIn 1.2s
+    cubic-bezier(0.16,1,0.3,1) 0.2s forwards; }
+    .role { font-family: 'SF Mono','Fira Code','Cascadia Code','Consolas',monospace; font-weight:
+    400; font-size: 12px; fill: #6e7681; letter-spacing: 3.5px; text-transform: uppercase; opacity:
+    0; animation: fadeInUp 1s cubic-bezier(0.16,1,0.3,1) 0.6s forwards; }
+    .tag { font-family: 'SF Mono','Fira Code','Consolas',monospace; font-size: 11px; opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards; }
+    .al { stroke-dasharray: 280; stroke-dashoffset: 280; animation: lineReveal 1.4s
+    cubic-bezier(0.16,1,0.3,1) 0.4s forwards; }
+    .corner { stroke-dasharray: 56; stroke-dashoffset: 56; animation: cornerDraw 0.8s
+    cubic-bezier(0.16,1,0.3,1) forwards; }
+    .corner-tl { animation-delay: 0.1s; }
+    .corner-tr { animation-delay: 0.2s; }
+    .corner-bl { animation-delay: 0.3s; }
+    .corner-br { animation-delay: 0.4s; }
+    .bg-breathe { animation: breathe 6s ease-in-out infinite; }
+    .tag-float { animation: fadeIn 0.8s ease-out forwards, float 4s ease-in-out 1.5s infinite; }
+    .particle { animation: particleDrift 3s ease-out infinite; }
   </style>
 
-  <rect width="1200" height="300" fill="#0d1117"/>
-  <rect width="1200" height="300" fill="url(#g1)"/>
-  <rect width="1200" height="300" fill="url(#g2)"/>
-  <rect width="1200" height="300" fill="url(#scan)"/>
+  <rect width="1200" height="300" fill="#0d1117" />
+  <rect width="1200" height="300" fill="url(#g1)" class="bg-breathe" />
+  <rect width="1200" height="300" fill="url(#g2)" class="bg-breathe" style="animation-delay: 3s;" />
+  <rect width="1200" height="300" fill="url(#scan)" />
 
-  <g opacity="0.25"><line x1="40" y1="36" x2="68" y2="36" stroke="#00e5a0" stroke-width="1"/><line x1="40" y1="36" x2="40" y2="64" stroke="#00e5a0" stroke-width="1"/></g>
-  <g opacity="0.25"><line x1="1132" y1="36" x2="1160" y2="36" stroke="#58a6ff" stroke-width="1"/><line x1="1160" y1="36" x2="1160" y2="64" stroke="#58a6ff" stroke-width="1"/></g>
-  <g opacity="0.15"><line x1="40" y1="264" x2="40" y2="236" stroke="#00e5a0" stroke-width="0.5"/><line x1="40" y1="264" x2="68" y2="264" stroke="#00e5a0" stroke-width="0.5"/></g>
-  <g opacity="0.15"><line x1="1160" y1="264" x2="1160" y2="236" stroke="#58a6ff" stroke-width="0.5"/><line x1="1160" y1="264" x2="1132" y2="264" stroke="#58a6ff" stroke-width="0.5"/></g>
+  <!-- Animated corner brackets -->
+  <g class="corner corner-tl" opacity="0.3">
+    <line x1="40" y1="36" x2="68" y2="36" stroke="#00e5a0" stroke-width="1" stroke-dasharray="28"
+      stroke-dashoffset="28">
+      <animate attributeName="stroke-dashoffset" from="28" to="0" dur="0.6s" begin="0.1s"
+        fill="freeze" />
+    </line>
+    <line x1="40" y1="36" x2="40" y2="64" stroke="#00e5a0" stroke-width="1" stroke-dasharray="28"
+      stroke-dashoffset="28">
+      <animate attributeName="stroke-dashoffset" from="28" to="0" dur="0.6s" begin="0.2s"
+        fill="freeze" />
+    </line>
+  </g>
+  <g class="corner corner-tr" opacity="0.3">
+    <line x1="1132" y1="36" x2="1160" y2="36" stroke="#58a6ff" stroke-width="1"
+      stroke-dasharray="28" stroke-dashoffset="28">
+      <animate attributeName="stroke-dashoffset" from="28" to="0" dur="0.6s" begin="0.3s"
+        fill="freeze" />
+    </line>
+    <line x1="1160" y1="36" x2="1160" y2="64" stroke="#58a6ff" stroke-width="1"
+      stroke-dasharray="28" stroke-dashoffset="28">
+      <animate attributeName="stroke-dashoffset" from="28" to="0" dur="0.6s" begin="0.4s"
+        fill="freeze" />
+    </line>
+  </g>
+  <g opacity="0.18">
+    <line x1="40" y1="264" x2="40" y2="236" stroke="#00e5a0" stroke-width="0.5"
+      stroke-dasharray="28" stroke-dashoffset="28">
+      <animate attributeName="stroke-dashoffset" from="28" to="0" dur="0.6s" begin="0.5s"
+        fill="freeze" />
+    </line>
+    <line x1="40" y1="264" x2="68" y2="264" stroke="#00e5a0" stroke-width="0.5"
+      stroke-dasharray="28" stroke-dashoffset="28">
+      <animate attributeName="stroke-dashoffset" from="28" to="0" dur="0.6s" begin="0.6s"
+        fill="freeze" />
+    </line>
+  </g>
+  <g opacity="0.18">
+    <line x1="1160" y1="264" x2="1160" y2="236" stroke="#58a6ff" stroke-width="0.5"
+      stroke-dasharray="28" stroke-dashoffset="28">
+      <animate attributeName="stroke-dashoffset" from="28" to="0" dur="0.6s" begin="0.7s"
+        fill="freeze" />
+    </line>
+    <line x1="1160" y1="264" x2="1132" y2="264" stroke="#58a6ff" stroke-width="0.5"
+      stroke-dasharray="28" stroke-dashoffset="28">
+      <animate attributeName="stroke-dashoffset" from="28" to="0" dur="0.6s" begin="0.8s"
+        fill="freeze" />
+    </line>
+  </g>
 
-  <line x1="460" y1="162" x2="740" y2="162" stroke="url(#accentLine)" stroke-width="1" class="al"/>
+  <!-- Floating particles -->
+  <circle cx="200" cy="80" r="1" fill="#00e5a0" opacity="0" style="--dx:15px;--dy:-25px">
+    <animate attributeName="opacity" values="0;0.5;0" dur="4s" repeatCount="indefinite" begin="1s" />
+    <animateTransform attributeName="transform" type="translate" values="0,0;15,-25" dur="4s"
+      repeatCount="indefinite" begin="1s" />
+  </circle>
+  <circle cx="950" cy="100" r="1" fill="#58a6ff" opacity="0">
+    <animate attributeName="opacity" values="0;0.4;0" dur="5s" repeatCount="indefinite" begin="2s" />
+    <animateTransform attributeName="transform" type="translate" values="0,0;-10,-20" dur="5s"
+      repeatCount="indefinite" begin="2s" />
+  </circle>
+  <circle cx="400" cy="220" r="0.8" fill="#00e5a0" opacity="0">
+    <animate attributeName="opacity" values="0;0.3;0" dur="3.5s" repeatCount="indefinite"
+      begin="0.5s" />
+    <animateTransform attributeName="transform" type="translate" values="0,0;8,-18" dur="3.5s"
+      repeatCount="indefinite" begin="0.5s" />
+  </circle>
+  <circle cx="800" cy="200" r="0.8" fill="#58a6ff" opacity="0">
+    <animate attributeName="opacity" values="0;0.35;0" dur="4.5s" repeatCount="indefinite"
+      begin="1.5s" />
+    <animateTransform attributeName="transform" type="translate" values="0,0;-12,-22" dur="4.5s"
+      repeatCount="indefinite" begin="1.5s" />
+  </circle>
+  <circle cx="600" cy="70" r="0.6" fill="#e6edf3" opacity="0">
+    <animate attributeName="opacity" values="0;0.2;0" dur="6s" repeatCount="indefinite" begin="3s" />
+    <animateTransform attributeName="transform" type="translate" values="0,0;5,-15" dur="6s"
+      repeatCount="indefinite" begin="3s" />
+  </circle>
+
+  <!-- Accent line with shimmer -->
+  <line x1="460" y1="162" x2="740" y2="162" stroke="url(#accentLine)" stroke-width="1" class="al" />
+  <line x1="460" y1="162" x2="740" y2="162" stroke="url(#shimmer)" stroke-width="1.5" opacity="0.6" />
+
+  <!-- Name with glow -->
   <text x="600" y="132" text-anchor="middle" class="name a" filter="url(#textGlow)">PRAKHAR SHEKHAR</text>
-  <text x="600" y="198" text-anchor="middle" class="role a">Software Engineer  ·  System Architect  ·  Open Source</text>
-  <text x="60" y="282" class="tag a" style="animation-delay:1s"><tspan fill="#6e7681">~/</tspan><tspan fill="#00e5a0">prakhar</tspan></text>
-  <text x="1140" y="282" text-anchor="end" class="tag a" style="animation-delay:1.2s" fill="#6e7681">v2026.3</text>
-  <rect y="270" width="1200" height="30" fill="url(#bottomFade)"/>
+
+  <!-- Role with subtle glow -->
+  <text x="600" y="198" text-anchor="middle" class="role a" filter="url(#softGlow)">Software
+    Engineer · System Architect · Open Source</text>
+
+  <!-- Tags with float -->
+  <text x="60" y="282" class="tag tag-float a" style="animation-delay:1s">
+    <tspan fill="#6e7681">~/</tspan>
+    <tspan fill="#00e5a0">prakhar</tspan>
+  </text>
+  <text x="1140" y="282" text-anchor="end" class="tag tag-float a" style="animation-delay:1.2s"
+    fill="#6e7681">v2026.3</text>
+
+  <rect y="270" width="1200" height="30" fill="url(#bottomFade)" />
 </svg>

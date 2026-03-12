@@ -1,92 +1,174 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="330" viewBox="0 0 800 330">
   <defs>
     <radialGradient id="crt" cx="50%" cy="40%" r="65%">
-      <stop offset="0%" stop-color="#00e5a0" stop-opacity="0.02"/>
-      <stop offset="100%" stop-color="#0d1117" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#00e5a0" stop-opacity="0.02" />
+      <stop offset="100%" stop-color="#0d1117" stop-opacity="0" />
     </radialGradient>
     <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse">
-      <rect width="4" height="1" fill="#ffffff" opacity="0.007"/>
+      <rect width="4" height="1" fill="#ffffff" opacity="0.007" />
     </pattern>
     <filter id="glow">
-      <feGaussianBlur stdDeviation="3" result="b"/>
-      <feFlood flood-color="#00e5a0" flood-opacity="0.35"/>
-      <feComposite in2="b" operator="in"/>
-      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+      <feGaussianBlur stdDeviation="3" result="b" />
+      <feFlood flood-color="#00e5a0" flood-opacity="0.35" />
+      <feComposite in2="b" operator="in" />
+      <feMerge>
+        <feMergeNode />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
     </filter>
-    <clipPath id="wc"><rect width="800" height="330" rx="8"/></clipPath>
+    <filter id="glowBlue">
+      <feGaussianBlur stdDeviation="2" result="b" />
+      <feFlood flood-color="#58a6ff" flood-opacity="0.3" />
+      <feComposite in2="b" operator="in" />
+      <feMerge>
+        <feMergeNode />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <linearGradient id="borderGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00e5a0" stop-opacity="0.3" />
+      <stop offset="50%" stop-color="#58a6ff" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#00e5a0" stop-opacity="0.3" />
+    </linearGradient>
+    <clipPath id="wc">
+      <rect width="800" height="330" rx="8" />
+    </clipPath>
   </defs>
   <style>
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes slideInLeft { from { opacity: 0; transform: translateX(-12px); } to { opacity: 1;
+    transform: translateX(0); } }
+    @keyframes slideInRight { from { opacity: 0; transform: translateX(12px); } to { opacity: 1;
+    transform: translateX(0); } }
+    @keyframes typewriter { from { width: 0; } to { width: 100%; } }
     @keyframes pulse { 0%,100% { opacity: 0.85; } 50% { opacity: 0.12; } }
+    @keyframes borderShimmer { 0% { stroke-opacity: 0.3; } 50% { stroke-opacity: 0.6; } 100% {
+    stroke-opacity: 0.3; } }
+    @keyframes lineGrow { from { x2: 24; } to { x2: 776; } }
+    @keyframes glowPulse { 0%,100% { opacity: 0.35; } 50% { opacity: 0.6; } }
+    @keyframes dotBounce { 0%,100% { r: 5; } 50% { r: 5.5; } }
     @media (prefers-reduced-motion: reduce) {
-      .f { opacity: 1 !important; animation: none !important; }
+    .f, .sl, .sr { opacity: 1 !important; animation: none !important; transform: none !important; }
     }
     .t { font-family: 'SF Mono','Fira Code','Cascadia Code','Consolas',monospace; }
     .f { opacity: 0; animation: fadeIn 0.35s ease-out forwards; }
+    .sl { opacity: 0; animation: slideInLeft 0.45s cubic-bezier(0.16,1,0.3,1) forwards; }
+    .sr { opacity: 0; animation: slideInRight 0.45s cubic-bezier(0.16,1,0.3,1) forwards; }
+    .traffic { animation: dotBounce 2s ease-in-out infinite; }
   </style>
 
   <g clip-path="url(#wc)">
-    <!-- Window -->
-    <rect width="800" height="330" rx="8" fill="#0d1117" stroke="#21262d" stroke-width="1"/>
+    <!-- Window with animated border -->
+    <rect width="800" height="330" rx="8" fill="#0d1117" stroke="#21262d" stroke-width="1" />
+    <rect width="800" height="330" rx="8" fill="none" stroke="url(#borderGlow)" stroke-width="0.5"
+      opacity="0">
+      <animate attributeName="opacity" values="0;0.4;0" dur="5s" repeatCount="indefinite" begin="1s" />
+    </rect>
+
     <!-- Title bar -->
-    <rect x="1" y="1" width="798" height="34" rx="7" fill="#161b22"/>
-    <rect x="1" y="20" width="798" height="16" fill="#161b22"/>
-    <line x1="0" y1="35" x2="800" y2="35" stroke="#21262d" stroke-width="0.5"/>
-    <!-- Traffic lights -->
-    <circle cx="20" cy="18" r="5" fill="#ff5f57" opacity="0.8"/>
-    <circle cx="36" cy="18" r="5" fill="#febc2e" opacity="0.8"/>
-    <circle cx="52" cy="18" r="5" fill="#28c840" opacity="0.8"/>
+    <rect x="1" y="1" width="798" height="34" rx="7" fill="#161b22" />
+    <rect x="1" y="20" width="798" height="16" fill="#161b22" />
+    <line x1="0" y1="35" x2="800" y2="35" stroke="#21262d" stroke-width="0.5" />
+
+    <!-- Traffic lights with subtle pulse -->
+    <circle cx="20" cy="18" r="5" fill="#ff5f57" opacity="0.8" class="traffic" />
+    <circle cx="36" cy="18" r="5" fill="#febc2e" opacity="0.8" class="traffic"
+      style="animation-delay:0.3s" />
+    <circle cx="52" cy="18" r="5" fill="#28c840" opacity="0.8" class="traffic"
+      style="animation-delay:0.6s" />
+
     <!-- Title -->
-    <text x="400" y="22" text-anchor="middle" class="t" font-size="11" fill="#6e7681">prakhar@dev ~/about</text>
+    <text x="400" y="22" text-anchor="middle" class="t f" style="animation-delay:0.1s"
+      font-size="11" fill="#6e7681">prakhar@dev ~/about</text>
+
     <!-- CRT effect -->
-    <rect x="1" y="36" width="798" height="293" fill="url(#crt)"/>
-    <rect x="1" y="36" width="798" height="293" fill="url(#scan)"/>
+    <rect x="1" y="36" width="798" height="293" fill="url(#crt)" />
+    <rect x="1" y="36" width="798" height="293" fill="url(#scan)" />
 
-    <!-- $ whoami -->
-    <text x="24" y="62" class="t f" style="animation-delay:0.1s" font-size="13">
-      <tspan fill="#00e5a0" filter="url(#glow)">$</tspan><tspan fill="#e6edf3"> whoami</tspan>
+    <!-- $ whoami — slide in from left -->
+    <text x="24" y="62" class="t sl" style="animation-delay:0.15s" font-size="13">
+      <tspan fill="#00e5a0" filter="url(#glow)">$</tspan>
+      <tspan fill="#e6edf3"> whoami</tspan>
     </text>
 
-    <!-- Code block -->
-    <text x="24" y="88" class="t f" style="animation-delay:0.2s" font-size="12">
-      <tspan fill="#58a6ff">const</tspan><tspan fill="#e6edf3"> prakhar = {</tspan>
+    <!-- Code block — staggered slide-in from left -->
+    <text x="24" y="88" class="t sl" style="animation-delay:0.3s" font-size="12">
+      <tspan fill="#58a6ff">const</tspan>
+      <tspan fill="#e6edf3"> prakhar = {</tspan>
     </text>
-    <text x="24" y="106" class="t f" style="animation-delay:0.3s" font-size="12">
-      <tspan fill="#6e7681">  location:   </tspan><tspan fill="#00e5a0">"Bengaluru, India"</tspan><tspan fill="#6e7681">,</tspan>
+    <text x="24" y="106" class="t sl" style="animation-delay:0.45s" font-size="12">
+      <tspan fill="#6e7681"> location: </tspan>
+      <tspan fill="#00e5a0">"Bengaluru, India"</tspan>
+      <tspan fill="#6e7681">,</tspan>
     </text>
-    <text x="24" y="124" class="t f" style="animation-delay:0.4s" font-size="12">
-      <tspan fill="#6e7681">  experience: </tspan><tspan fill="#00e5a0">"3+ years — Amazon Payments &amp; Travel"</tspan><tspan fill="#6e7681">,</tspan>
+    <text x="24" y="124" class="t sl" style="animation-delay:0.6s" font-size="12">
+      <tspan fill="#6e7681"> experience: </tspan>
+      <tspan fill="#00e5a0">"3+ years — Amazon Payments &amp; Travel"</tspan>
+      <tspan fill="#6e7681">,</tspan>
     </text>
-    <text x="24" y="142" class="t f" style="animation-delay:0.5s" font-size="12">
-      <tspan fill="#6e7681">  seeking:    </tspan><tspan fill="#00e5a0">"SDE II / Senior SDE"</tspan><tspan fill="#6e7681">,</tspan>
+    <text x="24" y="142" class="t sl" style="animation-delay:0.75s" font-size="12">
+      <tspan fill="#6e7681"> seeking: </tspan>
+      <tspan fill="#00e5a0">"SDE II / Senior SDE"</tspan>
+      <tspan fill="#6e7681">,</tspan>
     </text>
-    <text x="24" y="160" class="t f" style="animation-delay:0.6s" font-size="12">
-      <tspan fill="#6e7681">  education:  </tspan><tspan fill="#00e5a0">"MCA, MNNIT Prayagraj (9.25 GPA)"</tspan><tspan fill="#6e7681">,</tspan>
+    <text x="24" y="160" class="t sl" style="animation-delay:0.9s" font-size="12">
+      <tspan fill="#6e7681"> education: </tspan>
+      <tspan fill="#00e5a0">"MCA, MNNIT Prayagraj (9.25 GPA)"</tspan>
+      <tspan fill="#6e7681">,</tspan>
     </text>
-    <text x="24" y="178" class="t f" style="animation-delay:0.7s" font-size="12">
-      <tspan fill="#6e7681">  passions:   [</tspan><tspan fill="#00e5a0">"System Design"</tspan><tspan fill="#6e7681">, </tspan><tspan fill="#00e5a0">"Perf Eng"</tspan><tspan fill="#6e7681">, </tspan><tspan fill="#00e5a0">"Open Source"</tspan><tspan fill="#6e7681">],</tspan>
+    <text x="24" y="178" class="t sl" style="animation-delay:1.05s" font-size="12">
+      <tspan fill="#6e7681"> passions: [</tspan>
+      <tspan fill="#00e5a0">"System Design"</tspan>
+      <tspan fill="#6e7681">, </tspan>
+      <tspan fill="#00e5a0">"Perf Eng"</tspan>
+      <tspan fill="#6e7681">, </tspan>
+      <tspan fill="#00e5a0">"Open Source"</tspan>
+      <tspan fill="#6e7681">],</tspan>
     </text>
-    <text x="24" y="196" class="t f" style="animation-delay:0.8s" font-size="12" fill="#e6edf3">};</text>
+    <text x="24" y="196" class="t sl" style="animation-delay:1.2s" font-size="12" fill="#e6edf3">};</text>
 
-    <!-- Divider -->
-    <line x1="24" y1="214" x2="776" y2="214" stroke="#21262d" stroke-width="0.5" class="f" style="animation-delay:0.9s"/>
+    <!-- Animated divider line — draws itself -->
+    <line x1="24" y1="214" x2="776" y2="214" stroke="#21262d" stroke-width="0.5"
+      stroke-dasharray="752" stroke-dashoffset="752">
+      <animate attributeName="stroke-dashoffset" from="752" to="0" dur="0.8s" begin="1.3s"
+        fill="freeze" />
+    </line>
 
-    <!-- Bio output -->
-    <text x="24" y="236" class="t f" style="animation-delay:1.0s" font-size="11" fill="#7d8590">
+    <!-- Subtle glow accent on divider -->
+    <line x1="24" y1="214" x2="776" y2="214" stroke="#00e5a0" stroke-width="0.3" opacity="0"
+      stroke-dasharray="752" stroke-dashoffset="752">
+      <animate attributeName="stroke-dashoffset" from="752" to="0" dur="0.8s" begin="1.3s"
+        fill="freeze" />
+      <animate attributeName="opacity" values="0;0.3;0" dur="3s" repeatCount="indefinite"
+        begin="2.1s" />
+    </line>
+
+    <!-- Bio output — slide in from right for contrast -->
+    <text x="24" y="236" class="t sr" style="animation-delay:1.5s" font-size="11" fill="#7d8590">
       Results-driven engineer who shipped at Amazon scale — hotel booking
     </text>
-    <text x="24" y="252" class="t f" style="animation-delay:1.05s" font-size="11" fill="#7d8590">
+    <text x="24" y="252" class="t sr" style="animation-delay:1.6s" font-size="11" fill="#7d8590">
       platforms, payment orchestration, event-driven architectures. Cut p90
     </text>
-    <text x="24" y="268" class="t f" style="animation-delay:1.1s" font-size="11" fill="#7d8590">
-      latency <tspan fill="#00e5a0">47%</tspan>, boosted conversions <tspan fill="#00e5a0">33%</tspan>, built systems handling millions
-    </text>
-    <text x="24" y="284" class="t f" style="animation-delay:1.15s" font-size="11" fill="#7d8590">
-      of requests. Now building <tspan fill="#58a6ff">open-source developer tools</tspan>.
-    </text>
+    <text x="24" y="268" class="t sr" style="animation-delay:1.7s" font-size="11" fill="#7d8590">
+      latency <tspan fill="#00e5a0" filter="url(#glow)">47%</tspan>, boosted conversions <tspan
+        fill="#00e5a0" filter="url(#glow)">33%</tspan>, built systems handling millions </text>
+    <text x="24" y="284" class="t sr" style="animation-delay:1.8s" font-size="11" fill="#7d8590"> of
+      requests. Now building <tspan fill="#58a6ff" filter="url(#glowBlue)">open-source developer
+      tools</tspan>. </text>
 
-    <!-- Cursor prompt -->
-    <text x="24" y="312" class="t f" style="animation-delay:1.3s" font-size="13" fill="#00e5a0" filter="url(#glow)">$</text>
-    <rect x="38" y="300" width="2" height="15" rx="1" fill="#00e5a0" opacity="0.85" style="animation: pulse 1.4s cubic-bezier(0.4,0,0.6,1) 1.4s infinite;"/>
+    <!-- Cursor prompt with glow -->
+    <text x="24" y="312" class="t f" style="animation-delay:2.0s" font-size="13" fill="#00e5a0"
+      filter="url(#glow)">$</text>
+    <rect x="38" y="300" width="2" height="15" rx="1" fill="#00e5a0" opacity="0">
+      <animate attributeName="opacity" values="0;0;0.85;0.85;0.12;0.85" dur="1.4s" begin="2.1s"
+        repeatCount="indefinite" />
+    </rect>
+
+    <!-- Ambient glow on cursor area -->
+    <circle cx="39" cy="307" r="8" fill="#00e5a0" opacity="0">
+      <animate attributeName="opacity" values="0;0.04;0.08;0.04;0" dur="2.8s"
+        repeatCount="indefinite" begin="2.1s" />
+    </circle>
   </g>
 </svg>
