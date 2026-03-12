@@ -1,206 +1,111 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 850" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="100%" height="100%">
   <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#0a0d12" />
-      <stop offset="100%" stop-color="#05070a" />
+    <linearGradient id="neonBrand" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00e5a0">
+        <animate attributeName="stop-color" values="#00e5a0;#58a6ff;#00e5a0" dur="4s"
+          repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#58a6ff">
+        <animate attributeName="stop-color" values="#58a6ff;#00e5a0;#58a6ff" dur="4s"
+          repeatCount="indefinite" />
+      </stop>
     </linearGradient>
 
-    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00e5a0" stop-opacity="0.8" />
-      <stop offset="100%" stop-color="#00e5a0" stop-opacity="0.2" />
+    <linearGradient id="bgGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#14142b" />
+      <stop offset="100%" stop-color="#05050f" />
     </linearGradient>
 
-    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.8" />
-      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0.2" />
-    </linearGradient>
-
-    <filter id="neonGreen" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="3" result="blur" />
+    <filter id="ultraGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
-    <filter id="neonBlue" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="3" result="blur" />
-      <feMerge>
         <feMergeNode in="blur" />
         <feMergeNode in="SourceGraphic" />
       </feMerge>
     </filter>
 
-    <pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse">
-      <rect width="4" height="1" fill="#ffffff" opacity="0.03" />
+    <pattern id="techGrid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#ffffff" stroke-width="1"
+        stroke-opacity="0.04" />
     </pattern>
-
-    <clipPath id="cliReveal">
-      <rect x="0" y="0" height="40" width="0">
-        <animate attributeName="width" from="0" to="800" dur="0.8s" begin="0.5s" fill="freeze" />
-      </rect>
-    </clipPath>
   </defs>
 
-  <rect width="100%" height="100%" fill="url(#bgGrad)" />
-  <rect width="100%" height="100%" fill="url(#scanlines)" pointer-events="none" />
+  <rect width="100%" height="100%" fill="url(#bgGlow)" />
 
-  <g transform="translate(50, 40)">
-    <rect width="1100" height="770" rx="16" fill="#0d1117" stroke="#21262d" stroke-width="2" />
+  <rect width="100%" height="100%" fill="url(#techGrid)">
+    <animate attributeName="opacity" values="0.2; 1; 0.2" dur="6s" repeatCount="indefinite" />
+  </rect>
 
-    <rect width="1100" height="45" rx="16" fill="#161b22" />
-    <rect y="25" width="1100" height="20" fill="#161b22" />
-    <line x1="0" y1="45" x2="1100" y2="45" stroke="#30363d" />
-    <g transform="translate(25, 22)">
-      <circle cx="0" cy="0" r="7" fill="#ff5f57" />
-      <circle cx="25" cy="0" r="7" fill="#febc2e" />
-      <circle cx="50" cy="0" r="7" fill="#28c840" />
-    </g>
-    <text x="550" y="28" text-anchor="middle" font-family="monospace" font-size="14" fill="#8b949e"
-      font-weight="bold">prakhar@sys: ~/projects --featured</text>
+  <g font-family="monospace" font-size="280" font-weight="bold" fill="url(#neonBrand)"
+    opacity="0.03">
+    <text x="50" y="420"> &lt; <animate attributeName="x" values="50; 20; 50" dur="8s"
+        repeatCount="indefinite" />
+    </text>
+    <text x="1050" y="420"> /&gt; <animate attributeName="x" values="1050; 1080; 1050" dur="8s"
+        repeatCount="indefinite" />
+    </text>
+  </g>
 
-    <g transform="translate(40, 80)">
-      <g clip-path="url(#cliReveal)">
-        <text y="20" font-family="monospace" font-size="20" fill="#00e5a0" filter="url(#neonGreen)">
-          $ <tspan fill="#e6edf3">fetch --all-projects --vivid</tspan></text>
-      </g>
-      <text y="50" font-family="monospace" font-size="13" fill="#8b949e" opacity="0"> > Initializing
-        repository meta-data... OK <animate attributeName="opacity" from="0" to="1" dur="0.2s"
-          begin="1.3s" fill="freeze" />
-      </text>
+  <g transform="translate(600, 300)" opacity="0.4">
+    <circle cx="0" cy="0" r="280" fill="none" stroke="#00e5a0" stroke-width="1"
+      stroke-dasharray="10 30 50 20">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="30s"
+        repeatCount="indefinite" />
+    </circle>
+    <circle cx="0" cy="0" r="260" fill="none" stroke="#58a6ff" stroke-width="2"
+      stroke-dasharray="100 50 20 40">
+      <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="20s"
+        repeatCount="indefinite" />
+    </circle>
+  </g>
 
-      <g transform="translate(0, 100)">
-        <g opacity="0">
-          <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="1.5s" fill="freeze" />
-          <animateTransform attributeName="transform" type="translate" from="0,20" to="0,0"
-            dur="0.5s" begin="1.5s" fill="freeze" />
+  <g filter="url(#ultraGlow)">
+    <circle cx="250" cy="150" r="4" fill="#00e5a0">
+      <animate attributeName="cy" values="150; 100; 150" dur="4s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.2; 1; 0.2" dur="4s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="950" cy="450" r="6" fill="#58a6ff">
+      <animate attributeName="cy" values="450; 500; 450" dur="5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.2; 1; 0.2" dur="5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="200" cy="450" r="3" fill="#ffffff">
+      <animate attributeName="cy" values="450; 410; 450" dur="3s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.1; 0.8; 0.1" dur="3s" repeatCount="indefinite" />
+    </circle>
+  </g>
 
-          <rect width="1020" height="280" rx="12" fill="#161b22" stroke="#21262d" />
-          <path d="M 0 10 Q 0 0 10 0 L 1010 0 Q 1020 0 1020 10 L 1020 40 L 0 40 Z" fill="#00e5a0"
-            opacity="0.05" />
-          <line x1="0" y1="40" x2="1020" y2="40" stroke="#00e5a0" stroke-opacity="0.2" />
+  <path d="M 200 300 L 1000 300" stroke="url(#neonBrand)" stroke-width="2" filter="url(#ultraGlow)"
+    opacity="0.6">
+    <animate attributeName="opacity" values="0.3; 0.9; 0.3" dur="3s" repeatCount="indefinite" />
+  </path>
 
-          <text x="30" y="27" font-family="monospace" font-size="18" font-weight="900"
-            fill="#00e5a0" filter="url(#neonGreen)">[ PROJECT: AI_VISUAL_CODE_REVIEW ]</text>
+  <g font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+    text-anchor="middle">
 
-          <text x="30" y="75" font-family="sans-serif" font-size="16" fill="#e6edf3"
-            font-weight="bold">Security-hardened visual code review with GitHub-like diff viewer.</text>
-          <text x="30" y="100" font-family="sans-serif" font-size="14" fill="#8b949e">AI-optimized
-            markdown exports and command injection protection.</text>
+    <text x="600" y="240" font-size="56" font-weight="900" fill="#ffffff" letter-spacing="8"> BUILT
+      WITH CONVICTION <animate attributeName="opacity" values="0; 1" dur="1.5s" fill="freeze" />
+      <animate
+        attributeName="y" values="260; 240" dur="1.5s" calcMode="spline" keySplines="0.1 0.8 0.2 1"
+        fill="freeze" />
+    </text>
 
-          <g transform="translate(30, 130)">
-            <rect width="120" height="45" rx="4" fill="#0d1117" stroke="#21262d" />
-            <text x="10" y="18" font-family="monospace" font-size="10" fill="#8b949e">STABLE_VER</text>
-            <text x="10" y="36" font-family="monospace" font-size="16" fill="#00e5a0"
-              font-weight="bold">v1.2.4</text>
+    <text x="600" y="380" font-size="42" font-weight="700" fill="url(#neonBrand)"
+      letter-spacing="12" filter="url(#ultraGlow)"> SHIPPED WITH CARE <animate
+        attributeName="opacity" values="0; 1" dur="1.5s" begin="0.5s" fill="freeze" />
+      <animate
+        attributeName="y" values="400; 380" dur="1.5s" begin="0.5s" calcMode="spline"
+        keySplines="0.1 0.8 0.2 1" fill="freeze" />
+    </text>
+  </g>
 
-            <rect x="135" width="120" height="45" rx="4" fill="#0d1117" stroke="#21262d" />
-            <text x="145" y="18" font-family="monospace" font-size="10" fill="#8b949e">MONTHLY_DL</text>
-            <text x="145" y="36" font-family="monospace" font-size="16" fill="#58a6ff"
-              font-weight="bold">ACTIVE</text>
-          </g>
-
-          <g transform="translate(30, 200)" font-family="monospace" font-size="11"
-            font-weight="bold">
-            <rect width="80" height="24" rx="12" fill="#339933" opacity="0.1" stroke="#339933" />
-            <text x="40" y="16" text-anchor="middle" fill="#339933">NODE.JS</text>
-
-            <rect x="90" width="80" height="24" rx="12" fill="#e6edf3" opacity="0.1"
-              stroke="#e6edf3" />
-            <text x="130" y="16" text-anchor="middle" fill="#e6edf3">EXPRESS</text>
-
-            <rect x="180" width="80" height="24" rx="12" fill="#2496ED" opacity="0.1"
-              stroke="#2496ED" />
-            <text x="220" y="16" text-anchor="middle" fill="#2496ED">DOCKER</text>
-
-            <rect x="270" width="80" height="24" rx="12" fill="#C21325" opacity="0.1"
-              stroke="#C21325" />
-            <text x="310" y="16" text-anchor="middle" fill="#C21325">JEST</text>
-          </g>
-
-          <g transform="translate(750, 140)">
-            <rect x="-100" y="-80" width="300" height="180" fill="#0d1117" rx="8" stroke="#21262d" />
-            <rect x="-80" y="-60" width="150" height="8" fill="#ff5f57" opacity="0.3" />
-            <rect x="-80" y="-45" width="200" height="8" fill="#28c840" opacity="0.3" />
-            <rect x="-80" y="-30" width="120" height="8" fill="#28c840" opacity="0.3" />
-
-            <rect x="-100" y="-80" width="300" height="2" fill="#00e5a0" filter="url(#neonGreen)">
-              <animate attributeName="y" values="-80; 100; -80" dur="4s" repeatCount="indefinite" />
-            </rect>
-            <text x="50" y="85" text-anchor="middle" font-family="monospace" font-size="10"
-              fill="#00e5a0">AI_THREAT_SCAN: CLEAR</text>
-          </g>
-        </g>
-      </g>
-
-      <g transform="translate(0, 400)">
-        <g opacity="0">
-          <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="2s" fill="freeze" />
-          <animateTransform attributeName="transform" type="translate" from="0,20" to="0,0"
-            dur="0.5s" begin="2s" fill="freeze" />
-
-          <rect width="1020" height="280" rx="12" fill="#161b22" stroke="#21262d" />
-          <path d="M 0 10 Q 0 0 10 0 L 1010 0 Q 1020 0 1020 10 L 1020 40 L 0 40 Z" fill="#58a6ff"
-            opacity="0.05" />
-          <line x1="0" y1="40" x2="1020" y2="40" stroke="#58a6ff" stroke-opacity="0.2" />
-
-          <text x="30" y="27" font-family="monospace" font-size="18" font-weight="900"
-            fill="#58a6ff" filter="url(#neonBlue)">[ PROJECT: MARKDOWN_VIEWER_PRO ]</text>
-
-          <text x="30" y="75" font-family="sans-serif" font-size="16" fill="#e6edf3"
-            font-weight="bold">Production-ready editor with real-time preview and 12+ themes.</text>
-          <text x="30" y="100" font-family="sans-serif" font-size="14" fill="#8b949e">Supports
-            Mermaid diagrams, PDF/HTML export, and multi-threaded rendering.</text>
-
-          <g transform="translate(30, 130)">
-            <rect width="120" height="45" rx="4" fill="#0d1117" stroke="#21262d" />
-            <text x="10" y="18" font-family="monospace" font-size="10" fill="#8b949e">TEST_SUITE</text>
-            <text x="10" y="36" font-family="monospace" font-size="16" fill="#00e5a0"
-              font-weight="bold">155 PASSED</text>
-
-            <rect x="135" width="120" height="45" rx="4" fill="#0d1117" stroke="#21262d" />
-            <text x="145" y="18" font-family="monospace" font-size="10" fill="#8b949e">LIVE_DEMO</text>
-            <text x="145" y="36" font-family="monospace" font-size="16" fill="#58a6ff"
-              font-weight="bold">STABLE</text>
-          </g>
-
-          <g transform="translate(30, 200)" font-family="monospace" font-size="11"
-            font-weight="bold">
-            <rect width="80" height="24" rx="12" fill="#646CFF" opacity="0.1" stroke="#646CFF" />
-            <text x="40" y="16" text-anchor="middle" fill="#646CFF">VITE</text>
-
-            <rect x="90" width="100" height="24" rx="12" fill="#F7DF1E" opacity="0.1"
-              stroke="#F7DF1E" />
-            <text x="140" y="16" text-anchor="middle" fill="#F7DF1E">JAVASCRIPT</text>
-
-            <rect x="200" width="80" height="24" rx="12" fill="#6E9F18" opacity="0.1"
-              stroke="#6E9F18" />
-            <text x="240" y="16" text-anchor="middle" fill="#6E9F18">VITEST</text>
-
-            <rect x="290" width="100" height="24" rx="12" fill="#e6edf3" opacity="0.1"
-              stroke="#e6edf3" />
-            <text x="340" y="16" text-anchor="middle" fill="#e6edf3">MERMAID.JS</text>
-          </g>
-
-          <g transform="translate(750, 140)">
-            <rect x="-100" y="-80" width="300" height="180" fill="#0d1117" rx="8" stroke="#21262d" />
-            <circle cx="50" cy="0" r="40" fill="none" stroke="#58a6ff" stroke-width="1"
-              stroke-dasharray="5 5">
-              <animateTransform attributeName="transform" type="rotate" from="0 50 0" to="360 50 0"
-                dur="10s" repeatCount="indefinite" />
-            </circle>
-            <circle cx="50" cy="0" r="10" fill="#58a6ff" filter="url(#neonBlue)">
-              <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite" />
-            </circle>
-            <text x="50" y="85" text-anchor="middle" font-family="monospace" font-size="10"
-              fill="#58a6ff">PREVIEW_ENGINE: ACTIVE</text>
-          </g>
-        </g>
-      </g>
-
-      <g transform="translate(0, 710)" font-family="monospace" font-size="13" fill="#484f58">
-        <text>DEPLOYS_SUCCESSFUL: 2 // TEST_COVERAGE: 100% // ALL_SYSTEMS_OPERATIONAL</text>
-        <animate attributeName="opacity" values="0;1;0.5;1" dur="2s" begin="3s" fill="freeze" />
-      </g>
+  <g transform="translate(600, 460)">
+    <g filter="url(#ultraGlow)">
+      <animateTransform attributeName="transform" type="scale" values="1; 1.25; 1" dur="1.2s"
+        repeatCount="indefinite" />
+      <path
+        d="M0 12l-1.45-1.32C-6.8 6 -10.2 2.92 -10.2 -0.86 -10.2 -3.94 -7.78 -6.36 -4.7 -6.36c1.74 0 3.41.81 4.5 2.09C0.89 -5.55 2.56 -6.36 4.3 -6.36 7.38 -6.36 9.8 -3.94 9.8 -0.86c0 3.78-3.4 6.86-8.55 11.54L0 12z"
+        fill="none" stroke="url(#neonBrand)" stroke-width="2" />
     </g>
   </g>
 </svg>
