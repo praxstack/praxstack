@@ -79,59 +79,20 @@
 <!-- ═══════════════════════════════════════════════════════════════ -->
 
 <div align="center">
-  <h2>Featured Projects</h2>
+  <img src="https://raw.githubusercontent.com/praxstack/praxstack/main/assets/featuredProjects.svg" width="100%" alt="Featured Projects" />
 </div>
+
+<div align="center">
 
 <br/>
 
-<div align="center">
-<table>
-  <tr>
-    <td width="50%" valign="top">
-      <br/>
-      <div align="center">
-        <a href="https://github.com/praxstack/ai-visual-code-review">
-          <img src="https://img.shields.io/badge/AI%20Visual%20Code%20Review-e6edf3?style=for-the-badge&labelColor=0d1117&logo=github&logoColor=e6edf3" alt="AI Visual Code Review" />
-        </a>
-        <br/><br/>
-        <p>
-          Security-hardened visual code review with GitHub-like diff viewer,<br/>
-          AI-optimized markdown exports, and command injection protection.
-        </p>
-        <br/>
-        <a href="https://www.npmjs.com/package/ai-visual-code-review"><img src="https://img.shields.io/npm/v/ai-visual-code-review?style=flat-square&color=00e5a0&labelColor=161b22&label=version" alt="npm version" /></a>&ensp;
-        <a href="https://www.npmjs.com/package/ai-visual-code-review"><img src="https://img.shields.io/npm/dm/ai-visual-code-review?style=flat-square&color=58a6ff&labelColor=161b22&label=downloads" alt="downloads" /></a>
-        <br/><br/>
-        <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white" />&nbsp;
-        <img src="https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white" />&nbsp;
-        <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" />&nbsp;
-        <img src="https://img.shields.io/badge/Jest-C21325?style=flat-square&logo=jest&logoColor=white" />
-        <br/><br/>
-      </div>
-    </td>
-    <td width="50%" valign="top">
-      <br/>
-      <div align="center">
-        <a href="https://github.com/praxstack/markdown-viewer-app">
-          <img src="https://img.shields.io/badge/Markdown%20Viewer%20Pro-e6edf3?style=for-the-badge&labelColor=0d1117&logo=markdown&logoColor=e6edf3" alt="Markdown Viewer Pro" />
-        </a>
-        <br/><br/>
-        <p>
-          Production-ready markdown editor with real-time preview,<br/>
-          12+ themes, Mermaid diagrams, and PDF/HTML export.
-        </p>
-        <br/>
-        <a href="https://praxstack.github.io/markdown-viewer-app/"><img src="https://img.shields.io/badge/Live%20Demo-00e5a0?style=flat-square&labelColor=161b22" alt="Live Demo" /></a>&ensp;
-        <a href="https://github.com/praxstack/markdown-viewer-app"><img src="https://img.shields.io/badge/155%2B%20Tests-58a6ff?style=flat-square&labelColor=161b22" alt="155+ Tests" /></a>
-        <br/><br/>
-        <img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white" />&nbsp;
-        <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=000" />&nbsp;
-        <img src="https://img.shields.io/badge/Vitest-6E9F18?style=flat-square&logo=vitest&logoColor=white" />
-        <br/><br/>
-      </div>
-    </td>
-  </tr>
-</table>
+<a href="https://www.npmjs.com/package/ai-visual-code-review">
+  <img src="https://img.shields.io/badge/AI%20Visual%20Code%20Review%20→%20npm-00e5a0?style=for-the-badge&logo=npm&logoColor=white&labelColor=0d1117" alt="AI Visual Code Review on npm" />
+</a>&ensp;
+<a href="https://praxstack.github.io/markdown-viewer-app/">
+  <img src="https://img.shields.io/badge/Markdown%20Viewer%20Pro%20→%20Live%20Demo-58a6ff?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117" alt="Markdown Viewer Pro Live Demo" />
+</a>
+
 </div>
 
 <br/>
@@ -146,6 +107,20 @@
 
 <div align="center">
   <img src="https://raw.githubusercontent.com/praxstack/praxstack/main/assets/terminal-career.svg" width="100%" alt="Career timeline" />
+</div>
+
+<br/>
+
+<img src="https://raw.githubusercontent.com/praxstack/praxstack/main/assets/divider.svg" width="100%" alt="" />
+
+<br/>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!--  AWARDS                                                        -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/praxstack/praxstack/main/assets/terminal-awards.svg" width="100%" alt="Awards — Amazon Pay Champion 2023" />
 </div>
 
 <br/>

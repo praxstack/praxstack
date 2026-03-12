@@ -1,239 +1,286 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="100%" height="100%">
   <defs>
-    <radialGradient id="crt" cx="50%" cy="40%" r="65%">
-      <stop offset="0%" stop-color="#00e5a0" stop-opacity="0.015" />
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0a0d12" />
+      <stop offset="100%" stop-color="#05070a" />
+    </linearGradient>
+
+    <radialGradient id="screenGlare" cx="50%" cy="10%" r="80%">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.1" />
       <stop offset="100%" stop-color="#0d1117" stop-opacity="0" />
     </radialGradient>
-    <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse">
-      <rect width="4" height="1" fill="#ffffff" opacity="0.007" />
+
+    <linearGradient id="termBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00e5a0" stop-opacity="0.5" />
+      <stop offset="50%" stop-color="#21262d" stop-opacity="1" />
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0.5" />
+    </linearGradient>
+
+    <linearGradient id="gitLine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#00e5a0" stop-opacity="1" />
+      <stop offset="50%" stop-color="#58a6ff" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#0d1117" stop-opacity="0" />
+    </linearGradient>
+
+    <filter id="neonGreen" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="neonBlue" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="1" fill="#ffffff" opacity="0.02" />
     </pattern>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="3" result="b" />
-      <feFlood flood-color="#00e5a0" flood-opacity="0.3" />
-      <feComposite in2="b" operator="in" />
-      <feMerge>
-        <feMergeNode />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
-    <filter id="glowB">
-      <feGaussianBlur stdDeviation="3" result="b" />
-      <feFlood flood-color="#58a6ff" flood-opacity="0.3" />
-      <feComposite in2="b" operator="in" />
-      <feMerge>
-        <feMergeNode />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
-    <filter id="nodeGlow">
-      <feGaussianBlur stdDeviation="4" result="b" />
-      <feFlood flood-color="#00e5a0" flood-opacity="0.4" />
-      <feComposite in2="b" operator="in" />
-      <feMerge>
-        <feMergeNode />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
-    <filter id="nodeGlowB">
-      <feGaussianBlur stdDeviation="4" result="b" />
-      <feFlood flood-color="#58a6ff" flood-opacity="0.4" />
-      <feComposite in2="b" operator="in" />
-      <feMerge>
-        <feMergeNode />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
-    <linearGradient id="tl" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#00e5a0" stop-opacity="0.6" />
-      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0.4" />
-    </linearGradient>
-    <linearGradient id="borderGlow" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#00e5a0" stop-opacity="0.2" />
-      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0.2" />
-    </linearGradient>
-    <clipPath id="wc">
-      <rect width="800" height="400" rx="8" />
+
+    <clipPath id="cmd">
+      <rect x="30" y="80" height="40" width="0">
+        <animate attributeName="width" from="0" to="800" dur="0.4s" begin="0.5s" fill="freeze" />
+      </rect>
+    </clipPath>
+
+    <clipPath id="c1">
+      <rect x="30" y="120" height="80" width="0">
+        <animate attributeName="width" from="0" to="800" dur="0.4s" begin="1.2s" fill="freeze" />
+      </rect>
+    </clipPath>
+    <clipPath id="c2">
+      <rect x="30" y="180" height="80" width="0">
+        <animate attributeName="width" from="0" to="800" dur="0.4s" begin="1.8s" fill="freeze" />
+      </rect>
+    </clipPath>
+    <clipPath id="c3">
+      <rect x="30" y="240" height="80" width="0">
+        <animate attributeName="width" from="0" to="800" dur="0.4s" begin="2.4s" fill="freeze" />
+      </rect>
+    </clipPath>
+    <clipPath id="c4">
+      <rect x="30" y="300" height="80" width="0">
+        <animate attributeName="width" from="0" to="800" dur="0.4s" begin="3.0s" fill="freeze" />
+      </rect>
+    </clipPath>
+    <clipPath id="c5">
+      <rect x="30" y="360" height="80" width="0">
+        <animate attributeName="width" from="0" to="800" dur="0.4s" begin="3.6s" fill="freeze" />
+      </rect>
+    </clipPath>
+    <clipPath id="c6">
+      <rect x="30" y="420" height="80" width="0">
+        <animate attributeName="width" from="0" to="800" dur="0.4s" begin="4.2s" fill="freeze" />
+      </rect>
+    </clipPath>
+    <clipPath id="c7">
+      <rect x="30" y="480" height="80" width="0">
+        <animate attributeName="width" from="0" to="800" dur="0.4s" begin="4.8s" fill="freeze" />
+      </rect>
     </clipPath>
   </defs>
+
   <style>
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    @keyframes slideInLeft { from { opacity: 0; transform: translateX(-15px); } to { opacity: 1;
-    transform: translateX(0); } }
-    @keyframes slideInRight { from { opacity: 0; transform: translateX(15px); } to { opacity: 1;
-    transform: translateX(0); } }
-    @keyframes pulse { 0%,100% { opacity: 0.85; } 50% { opacity: 0.12; } }
-    @keyframes nodePulse { 0%,100% { r: 4; opacity: 1; } 50% { r: 6; opacity: 0.6; } }
-    @keyframes nodePulseSmall { 0%,100% { r: 3; opacity: 1; } 50% { r: 5; opacity: 0.6; } }
-    @keyframes dotBounce { 0%,100% { r: 5; } 50% { r: 5.5; } }
-    @keyframes ripple { 0% { r: 4; opacity: 0.4; } 100% { r: 16; opacity: 0; } }
-    @keyframes headGlow { 0%,100% { opacity: 0.6; } 50% { opacity: 1; } }
-    @media (prefers-reduced-motion: reduce) { .f, .sl, .sr { opacity: 1 !important; animation: none
-    !important; transform: none !important; } }
-    .t { font-family: 'SF Mono','Fira Code','Cascadia Code','Consolas',monospace; }
-    .f { opacity: 0; animation: fadeIn 0.35s ease-out forwards; }
-    .sl { opacity: 0; animation: slideInLeft 0.5s cubic-bezier(0.16,1,0.3,1) forwards; }
-    .sr { opacity: 0; animation: slideInRight 0.5s cubic-bezier(0.16,1,0.3,1) forwards; }
-    .traffic { animation: dotBounce 2s ease-in-out infinite; }
+    .font-mono { font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', 'Consolas', monospace; }
+    .traffic { animation: pulseBounce 2s ease-in-out infinite; }
+    @keyframes pulseBounce { 0%, 100% { transform: scale(1); opacity: 0.8; } 50% { transform:
+    scale(1.1); opacity: 1; } }
   </style>
 
-  <g clip-path="url(#wc)">
-    <rect width="800" height="400" rx="8" fill="#0d1117" stroke="#21262d" stroke-width="1" />
-    <rect width="800" height="400" rx="8" fill="none" stroke="url(#borderGlow)" stroke-width="0.5"
-      opacity="0">
-      <animate attributeName="opacity" values="0;0.3;0" dur="5s" repeatCount="indefinite" begin="2s" />
-    </rect>
+  <rect width="100%" height="100%" fill="url(#bgGrad)" />
 
-    <rect x="1" y="1" width="798" height="34" rx="7" fill="#161b22" />
-    <rect x="1" y="20" width="798" height="16" fill="#161b22" />
-    <line x1="0" y1="35" x2="800" y2="35" stroke="#21262d" stroke-width="0.5" />
-    <circle cx="20" cy="18" r="5" fill="#ff5f57" opacity="0.8" class="traffic" />
-    <circle cx="36" cy="18" r="5" fill="#febc2e" opacity="0.8" class="traffic"
-      style="animation-delay:0.3s" />
-    <circle cx="52" cy="18" r="5" fill="#28c840" opacity="0.8" class="traffic"
-      style="animation-delay:0.6s" />
-    <text x="400" y="22" text-anchor="middle" class="t f" font-size="11" fill="#6e7681">git log
-      --career</text>
-    <rect x="1" y="36" width="798" height="363" fill="url(#crt)" />
-    <rect x="1" y="36" width="798" height="363" fill="url(#scan)" />
+  <g transform="translate(60, 60)">
+    <rect width="1080" height="580" rx="12" fill="#000000" opacity="0.4"
+      transform="translate(10, 15)" filter="blur(15px)" />
+    <rect width="1080" height="580" rx="12" fill="#0d1117" stroke="url(#termBorder)"
+      stroke-width="2" />
 
-    <!-- Command — slide in -->
-    <text x="24" y="62" class="t sl" style="animation-delay:0.1s" font-size="13">
-      <tspan fill="#00e5a0" filter="url(#glow)">$</tspan>
-      <tspan fill="#e6edf3"> git log --oneline career</tspan>
+    <rect width="1080" height="580" rx="12" fill="url(#screenGlare)" />
+    <rect width="1080" height="580" rx="12" fill="url(#scanlines)" />
+
+    <path d="M 0 12 Q 0 0 12 0 L 1068 0 Q 1080 0 1080 12 L 1080 40 L 0 40 Z" fill="#161b22" />
+    <line x1="0" y1="40" x2="1080" y2="40" stroke="#30363d" stroke-width="1" />
+
+    <g transform="translate(20, 20)">
+      <circle cx="0" cy="0" r="6" fill="#ff5f57" class="traffic" />
+      <circle cx="24" cy="0" r="6" fill="#febc2e" class="traffic" style="animation-delay:0.2s" />
+      <circle cx="48" cy="0" r="6" fill="#28c840" class="traffic" style="animation-delay:0.4s" />
+    </g>
+
+    <text x="540" y="25" text-anchor="middle" class="font-mono" font-size="13" fill="#8b949e"
+      font-weight="600">
+      git log --career
     </text>
 
-    <!-- HEAD label with glow pulse -->
-    <text x="24" y="86" class="t f" style="animation-delay:0.25s" font-size="9" fill="#00e5a0"
-      font-weight="600" letter-spacing="1" filter="url(#glow)"> HEAD <animate
-        attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite" begin="0.5s" />
-    </text>
+    <g font-size="16" class="font-mono">
+      <g clip-path="url(#cmd)">
+        <text x="40" y="100">
+          <tspan fill="#00e5a0" filter="url(#neonGreen)">$</tspan>
+          <tspan fill="#e6edf3"> git log --oneline --graph career</tspan>
+        </text>
+      </g>
 
-    <!-- Timeline line — animated draw -->
-    <line x1="38" y1="94" x2="38" y2="350" stroke="url(#tl)" stroke-width="1.5"
-      stroke-dasharray="256" stroke-dashoffset="256">
-      <animate attributeName="stroke-dashoffset" from="256" to="0" dur="1.5s" begin="0.3s"
-        fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1" />
-    </line>
+      <line x1="60" y1="140" x2="60" y2="520" stroke="url(#gitLine)" stroke-width="2"
+        stroke-dasharray="400" stroke-dashoffset="400">
+        <animate attributeName="stroke-dashoffset" from="400" to="0" dur="3.6s" begin="1.2s"
+          fill="freeze" linear="true" />
+      </line>
 
-    <!-- Subtle glow trail on timeline -->
-    <line x1="38" y1="94" x2="38" y2="350" stroke="#00e5a0" stroke-width="3" opacity="0"
-      stroke-dasharray="256" stroke-dashoffset="256">
-      <animate attributeName="stroke-dashoffset" from="256" to="0" dur="1.5s" begin="0.3s"
-        fill="freeze" />
-      <animate attributeName="opacity" values="0;0.08;0.03" dur="1.5s" begin="0.3s" fill="freeze" />
-    </line>
+      <g clip-path="url(#c1)">
+        <circle cx="60" cy="145" r="5" fill="#0d1117" stroke="#00e5a0" stroke-width="2"
+          filter="url(#neonGreen)">
+          <animate attributeName="r" values="4; 6; 4" dur="2s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="60" cy="145" r="12" fill="none" stroke="#00e5a0" opacity="0">
+          <animate attributeName="r" values="6; 20" dur="2s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="0.8; 0" dur="2s" repeatCount="indefinite" />
+        </circle>
+        <text x="85" y="140">
+          <tspan fill="#e6edf3" font-weight="bold">Sep 2025</tspan>
+          <tspan fill="#00e5a0" font-weight="bold" filter="url(#neonGreen)"> (HEAD)</tspan>
+        </text>
+        <text x="85" y="160" font-size="14" fill="#8b949e">> LEFT Amazon — Ready for the next
+          chapter</text>
+      </g>
 
-    <!-- Entry 1 — LEFT Amazon — slide from right -->
-    <g class="sr" style="animation-delay:0.4s">
-      <!-- Ripple effect on first node -->
-      <circle cx="38" cy="106" r="4" fill="#00e5a0" opacity="0">
-        <animate attributeName="r" values="4;18" dur="2s" repeatCount="indefinite" begin="1s" />
-        <animate attributeName="opacity" values="0.3;0" dur="2s" repeatCount="indefinite" begin="1s" />
-      </circle>
-      <circle cx="38" cy="106" r="4" fill="#0d1117" stroke="#00e5a0" stroke-width="1.5"
-        filter="url(#nodeGlow)">
-        <animate attributeName="r" values="4;5;4" dur="2.5s" repeatCount="indefinite" begin="1s" />
-      </circle>
-      <text x="56" y="102" class="t" font-size="10" fill="#00e5a0" font-weight="600">Sep 2025</text>
-      <text x="56" y="116" class="t" font-size="11" fill="#e6edf3">LEFT Amazon — Ready for the next
-        chapter</text>
+      <g clip-path="url(#c2)">
+        <circle cx="60" cy="205" r="4" fill="#0d1117" stroke="#58a6ff" stroke-width="2"
+          filter="url(#neonBlue)" />
+        <text x="85" y="200">
+          <tspan fill="#e6edf3" font-weight="bold">2023</tspan>
+          <tspan fill="#58a6ff"> (Amazon Pay — Trust-Buster)</tspan>
+        </text>
+        <text x="85" y="220" font-size="14" fill="#8b949e">> Resolved 100+ bugs, cut on-call tickets
+          by 75%</text>
+      </g>
+
+      <g clip-path="url(#c3)">
+        <circle cx="60" cy="265" r="4" fill="#0d1117" stroke="#00e5a0" stroke-width="2" />
+        <text x="85" y="260">
+          <tspan fill="#e6edf3" font-weight="bold">2023</tspan>
+          <tspan fill="#00e5a0"> (Hotel Booking Platform)</tspan>
+        </text>
+        <text x="85" y="280" font-size="14" fill="#8b949e">> p90 latency 47%↓ · conversion 33%↑ ·
+          GZIP 95%↓</text>
+      </g>
+
+      <g clip-path="url(#c4)">
+        <circle cx="60" cy="325" r="4" fill="#0d1117" stroke="#58a6ff" stroke-width="2" />
+        <text x="85" y="320">
+          <tspan fill="#e6edf3" font-weight="bold">2022</tspan>
+          <tspan fill="#58a6ff"> (Event-Driven Architecture)</tspan>
+        </text>
+        <text x="85" y="340" font-size="14" fill="#8b949e">> Webhook service (idempotency + audit) ·
+          43 bps CPT↓</text>
+      </g>
+
+      <g clip-path="url(#c5)">
+        <circle cx="60" cy="385" r="4" fill="#0d1117" stroke="#00e5a0" stroke-width="2" />
+        <text x="85" y="380">
+          <tspan fill="#e6edf3" font-weight="bold">Jul 2022</tspan>
+          <tspan fill="#00e5a0"> (Joined Amazon)</tspan>
+        </text>
+        <text x="85" y="400" font-size="14" fill="#8b949e">> SDE (Full-Time) — Auto-Insurance
+          Milestoning</text>
+      </g>
+
+      <g clip-path="url(#c6)">
+        <circle cx="60" cy="445" r="4" fill="#0d1117" stroke="#58a6ff" stroke-width="2" />
+        <text x="85" y="440">
+          <tspan fill="#e6edf3" font-weight="bold">2021-2022</tspan>
+          <tspan fill="#58a6ff"> (Amazon SDE Intern x2)</tspan>
+        </text>
+        <text x="85" y="460" font-size="14" fill="#8b949e">> GraphQL Migration · Renewal Flows</text>
+      </g>
+
+      <g clip-path="url(#c7)">
+        <circle cx="60" cy="505" r="4" fill="#0d1117" stroke="#00e5a0" stroke-width="2" />
+        <text x="85" y="500">
+          <tspan fill="#e6edf3" font-weight="bold">2022</tspan>
+          <tspan fill="#00e5a0"> (Education)</tspan>
+        </text>
+        <text x="85" y="520" font-size="14" fill="#8b949e">> MCA — MNNIT Prayagraj (GPA: 9.25)</text>
+      </g>
     </g>
 
-    <!-- Entry 2 — Amazon Pay — slide from left -->
-    <g class="sl" style="animation-delay:0.6s">
-      <circle cx="38" cy="144" r="3" fill="#0d1117" stroke="#00e5a0" stroke-width="1.5">
-        <animate attributeName="r" values="3;4;3" dur="3s" repeatCount="indefinite" begin="1.5s" />
-      </circle>
-      <text x="56" y="140" class="t" font-size="10" fill="#00e5a0">2023</text>
-      <text x="112" y="140" class="t" font-size="11" fill="#e6edf3">Amazon Pay — Trust-Buster
-        Champion</text>
-      <text x="112" y="156" class="t" font-size="10" fill="#6e7681">Resolved 100+ bugs, cut on-call
-        tickets 75%</text>
+    <g transform="translate(40, 545)">
+      <text x="0" y="0" font-size="18" class="font-mono" fill="#00e5a0" filter="url(#neonGreen)">$</text>
+      <rect x="18" y="-14" width="10" height="18" fill="#00e5a0" opacity="0">
+        <animate attributeName="opacity" values="0; 1; 0" dur="1s" begin="5.4s"
+          repeatCount="indefinite" />
+      </rect>
     </g>
 
-    <!-- Entry 3 — Hotel Booking — slide from right -->
-    <g class="sr" style="animation-delay:0.8s">
-      <circle cx="38" cy="182" r="3" fill="#0d1117" stroke="#58a6ff" stroke-width="1.5"
-        filter="url(#nodeGlowB)">
-        <animate attributeName="r" values="3;4;3" dur="3s" repeatCount="indefinite" begin="2s" />
-      </circle>
-      <text x="56" y="178" class="t" font-size="10" fill="#58a6ff">2023</text>
-      <text x="112" y="178" class="t" font-size="11" fill="#e6edf3">Hotel Booking Platform — Travel</text>
-      <text x="112" y="194" class="t" font-size="10" fill="#6e7681">p90 latency 47%↓ · conversion
-        33%↑ · GZIP 95%↓</text>
+    <g transform="translate(750, 80)">
+      <line x1="0" y1="0" x2="0" y2="450" stroke="#21262d" stroke-width="2" />
+
+      <g transform="translate(40, 30)">
+        <text x="0" y="0" font-size="11" class="font-mono" fill="#e6edf3" font-weight="bold">LATENCY_REDUCTION
+          (p90)</text>
+        <text x="210" y="0" font-size="11" class="font-mono" fill="#00e5a0" filter="url(#neonGreen)">47%
+          ↓</text>
+
+        <line x1="0" y1="20" x2="250" y2="20" stroke="#21262d" stroke-width="1" />
+        <line x1="0" y1="50" x2="250" y2="50" stroke="#21262d" stroke-width="1" />
+        <line x1="0" y1="80" x2="250" y2="80" stroke="#21262d" stroke-width="1" />
+
+        <path d="M 0 20 L 50 30 L 100 10 L 150 40 L 200 70 L 250 80" fill="none" stroke="#58a6ff"
+          stroke-width="2" filter="url(#neonBlue)" stroke-dasharray="300" stroke-dashoffset="300">
+          <animate attributeName="stroke-dashoffset" from="300" to="0" dur="2s" begin="2s"
+            fill="freeze" />
+        </path>
+
+        <circle cx="250" cy="80" r="4" fill="#00e5a0" filter="url(#neonGreen)" opacity="0">
+          <animate attributeName="opacity" values="0; 1; 0" dur="2s" begin="4s"
+            repeatCount="indefinite" />
+        </circle>
+      </g>
+
+      <g transform="translate(40, 180)">
+        <text x="0" y="0" font-size="11" class="font-mono" fill="#e6edf3" font-weight="bold">API_TRAFFIC_LOAD
+          (CPS)</text>
+
+        <g stroke-width="12" stroke-linecap="round">
+          <line x1="10" y1="80" x2="10" y2="80" stroke="#30363d">
+            <animate attributeName="y2" values="80; 50; 80" dur="1.5s" repeatCount="indefinite" />
+          </line>
+          <line x1="40" y1="80" x2="40" y2="80" stroke="#58a6ff">
+            <animate attributeName="y2" values="80; 30; 80" dur="2s" repeatCount="indefinite" />
+          </line>
+          <line x1="70" y1="80" x2="70" y2="80" stroke="#30363d">
+            <animate attributeName="y2" values="80; 60; 80" dur="1.2s" repeatCount="indefinite" />
+          </line>
+          <line x1="100" y1="80" x2="100" y2="80" stroke="#00e5a0" filter="url(#neonGreen)">
+            <animate attributeName="y2" values="80; 10; 80" dur="2.5s" repeatCount="indefinite" />
+          </line>
+          <line x1="130" y1="80" x2="130" y2="80" stroke="#30363d">
+            <animate attributeName="y2" values="80; 40; 80" dur="1.8s" repeatCount="indefinite" />
+          </line>
+        </g>
+      </g>
+
+      <g transform="translate(40, 330)" class="font-mono" font-size="10">
+        <text x="0" y="0" fill="#e6edf3" font-weight="bold" font-size="11">TRUST_BUSTER_METRICS</text>
+
+        <text x="0" y="30" fill="#8b949e">BUGS_RESOLVED</text>
+        <rect x="0" y="38" width="220" height="6" rx="3" fill="#21262d" />
+        <rect x="0" y="38" width="0" height="6" rx="3" fill="#58a6ff" filter="url(#neonBlue)">
+          <animate attributeName="width" from="0" to="200" dur="2s" begin="2.5s" fill="freeze" />
+        </rect>
+        <text x="230" y="45" fill="#58a6ff">100+</text>
+
+        <text x="0" y="70" fill="#8b949e">ON_CALL_TICKETS</text>
+        <rect x="0" y="78" width="220" height="6" rx="3" fill="#21262d" />
+        <rect x="0" y="78" width="0" height="6" rx="3" fill="#00e5a0" filter="url(#neonGreen)">
+          <animate attributeName="width" from="0" to="160" dur="2s" begin="3s" fill="freeze" />
+        </rect>
+        <text x="230" y="85" fill="#00e5a0">-75%</text>
+      </g>
     </g>
-
-    <!-- Entry 4 — Event-Driven — slide from left -->
-    <g class="sl" style="animation-delay:1.0s">
-      <circle cx="38" cy="220" r="3" fill="#0d1117" stroke="#00e5a0" stroke-width="1.5">
-        <animate attributeName="r" values="3;4;3" dur="3s" repeatCount="indefinite" begin="2.5s" />
-      </circle>
-      <text x="56" y="216" class="t" font-size="10" fill="#00e5a0">2022</text>
-      <text x="112" y="216" class="t" font-size="11" fill="#e6edf3">Event-Driven Architecture —
-        Travel</text>
-      <text x="112" y="232" class="t" font-size="10" fill="#6e7681">Webhook service (idempotency +
-        audit) · 43 bps CPT↓</text>
-    </g>
-
-    <!-- Entry 5 — Milestoning — slide from right -->
-    <g class="sr" style="animation-delay:1.2s">
-      <circle cx="38" cy="258" r="3" fill="#0d1117" stroke="#58a6ff" stroke-width="1.5"
-        filter="url(#nodeGlowB)">
-        <animate attributeName="r" values="3;4;3" dur="3s" repeatCount="indefinite" begin="3s" />
-      </circle>
-      <text x="56" y="254" class="t" font-size="10" fill="#58a6ff">2022</text>
-      <text x="112" y="254" class="t" font-size="11" fill="#e6edf3">Auto-Insurance Milestoning —
-        Payments</text>
-      <text x="112" y="270" class="t" font-size="10" fill="#6e7681">Multi-stage renewal flows → 60%
-        more renewals</text>
-    </g>
-
-    <!-- Entry 6 — Joined Amazon — slide from left -->
-    <g class="sl" style="animation-delay:1.4s">
-      <circle cx="38" cy="296" r="3" fill="#0d1117" stroke="#00e5a0" stroke-width="1.5">
-        <animate attributeName="r" values="3;4;3" dur="3s" repeatCount="indefinite" begin="3.5s" />
-      </circle>
-      <text x="56" y="292" class="t" font-size="10" fill="#00e5a0">Jul 2022</text>
-      <text x="126" y="292" class="t" font-size="11" fill="#e6edf3">Joined Amazon as SDE (Full-Time)</text>
-    </g>
-
-    <!-- Entry 7 — Intern — slide from right -->
-    <g class="sr" style="animation-delay:1.6s">
-      <circle cx="38" cy="318" r="3" fill="#0d1117" stroke="#58a6ff" stroke-width="1.5"
-        filter="url(#nodeGlowB)">
-        <animate attributeName="r" values="3;4;3" dur="3s" repeatCount="indefinite" begin="4s" />
-      </circle>
-      <text x="56" y="314" class="t" font-size="10" fill="#58a6ff">2021-22</text>
-      <text x="126" y="314" class="t" font-size="11" fill="#e6edf3">Amazon SDE Intern × 2 — Renewal
-        · GraphQL Migration</text>
-    </g>
-
-    <!-- Entry 8 — Education — slide from left -->
-    <g class="sl" style="animation-delay:1.8s">
-      <circle cx="38" cy="340" r="3" fill="#0d1117" stroke="#00e5a0" stroke-width="1.5">
-        <animate attributeName="r" values="3;4;3" dur="3s" repeatCount="indefinite" begin="4.5s" />
-      </circle>
-      <text x="56" y="336" class="t" font-size="10" fill="#00e5a0">2022</text>
-      <text x="112" y="336" class="t" font-size="11" fill="#e6edf3">MCA — MNNIT Prayagraj (GPA:
-        9.25)</text>
-    </g>
-
-    <!-- End marker with fade -->
-    <circle cx="38" cy="354" r="2" fill="#30363d" class="f" style="animation-delay:2.0s">
-      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="3s" repeatCount="indefinite"
-        begin="2.5s" />
-    </circle>
-
-    <!-- Cursor -->
-    <text x="24" y="382" class="t f" style="animation-delay:2.2s" font-size="13" fill="#00e5a0"
-      filter="url(#glow)">$</text>
-    <rect x="38" y="370" width="2" height="15" rx="1" fill="#00e5a0" opacity="0">
-      <animate attributeName="opacity" values="0;0;0.85;0.85;0.12;0.85" dur="1.4s" begin="2.3s"
-        repeatCount="indefinite" />
-    </rect>
-    <circle cx="39" cy="377" r="8" fill="#00e5a0" opacity="0">
-      <animate attributeName="opacity" values="0;0.04;0.08;0.04;0" dur="2.8s"
-        repeatCount="indefinite" begin="2.3s" />
-    </circle>
   </g>
 </svg>
