@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 60" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 60" width="100%" height="100%" role="img" aria-labelledby="divider-title divider-desc">
+  <title id="divider-title">Section divider</title>
+  <desc id="divider-desc">Thin animated divider used between README sections.</desc>
   <defs>
     <linearGradient id="laserBeam" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#0d1117" stop-opacity="0" />

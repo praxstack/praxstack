@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="100%" height="100%" role="img" aria-labelledby="career-title career-desc">
+  <title id="career-title">Career timeline</title>
+  <desc id="career-desc">Terminal-styled career timeline with role, company, and impact per row.</desc>
   <defs>
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#0a0d12" />
