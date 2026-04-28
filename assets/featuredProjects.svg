@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 850" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 850" width="100%" height="100%" role="img" aria-labelledby="featured-title featured-desc">
+  <title id="featured-title">Featured Projects</title>
+  <desc id="featured-desc">Animated dashboard listing featured projects with metric tiles and tech-stack chips.</desc>
   <defs>
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#0a0d12" />
