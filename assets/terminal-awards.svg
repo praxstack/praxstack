@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" width="100%" height="100%" role="img" aria-labelledby="awards-title awards-desc">
+  <title id="awards-title">Awards — Amazon Pay Champion 2023</title>
+  <desc id="awards-desc">Terminal-styled awards card featuring the Amazon Pay Champion 2023 trophy.</desc>
   <defs>
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#0a0d12" />
